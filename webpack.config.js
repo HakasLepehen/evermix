@@ -46,7 +46,7 @@ const cssLoaders = (extra) => {
 console.log('IsDev:', isDev);
 
 module.exports = {
-    context: path.join(__dirname, "src"),
+    context: path.resolve(__dirname, "src"),
     entry: path.join(__dirname, "src", "index.js"),
     output: {
         filename: "[name].[contenthash].js",
@@ -69,7 +69,7 @@ module.exports = {
         ),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(
-            {filename: "[name].[contenthash].css"}
+            {filename: "styles/[name].[contenthash].css"}
         ),
     ],
     module: {
