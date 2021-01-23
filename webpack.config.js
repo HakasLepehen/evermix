@@ -7,6 +7,8 @@ const TerserWebpackPlugin = require("terser-webpack-plugin");
 const loader = require("sass-loader");
 
 console.log(process.env.NODE_ENV);
+console.log(__dirname);
+console.log(path.join(__dirname, 'src', '/assets/img/header/call-img.svg'));
 const isDev = process.env.NODE_ENV === "development";
 const optimization = () => {
     const config = {
@@ -44,38 +46,45 @@ const cssLoaders = (extra) => {
 console.log('IsDev:', isDev);
 
 module.exports = {
-    context: path.resolve(__dirname, "src"),
+    context: path.join(__dirname, "src"),
     entry: path.join(__dirname, "src", "index.js"),
     output: {
-      filename: "[name].[contenthash].js",
-      path: path.resolve(__dirname, "dist"),
+        filename: "[name].[contenthash].js",
+        path: path.resolve(__dirname, "dist")
     },
     optimization: optimization(),
     devServer: {
-      port: 4200,
+        port: 4200
     },
     plugins: [
-      new HTMLWebpackPlugin({
-        template: "./index.html",
-        minify: {
-          collapseWhitespace: !isDev,
-        },
-      }),
-      new CleanWebpackPlugin(),
-      new MiniCssExtractPlugin({
-        filename: "[name].[contenthash].css",
-      }),
+        new HTMLWebpackPlugin(
+            {
+                title: 'Evermix',
+                template: "./template.html",
+                favicon: path.resolve(__dirname, 'favicon.ico'),
+                minify: {
+                    collapseWhitespace: ! isDev
+                }
+            }
+        ),
+        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin(
+            {filename: "[name].[contenthash].css"}
+        ),
     ],
     module: {
-      rules: [
-        {
-          test: /\.css$/,
-          use: cssLoaders(),
-        },
-        {
-          test: /\.s[ac]ss$/,
-          use: cssLoaders('sass-loader'),
-        }
-      ],
-    },
-  };
+        rules: [
+            {
+                test: /\.css$/,
+                use: cssLoaders()
+            }, {
+                test: /\.s[ac]ss$/,
+                use: cssLoaders('sass-loader')
+            },
+            {
+                test: /\.(ico|gif|png|jpg|jpeg|svg)$/,
+                use: ['file-loader']
+            },
+        ]
+    }
+};
