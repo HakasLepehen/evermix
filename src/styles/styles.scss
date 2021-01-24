@@ -1,27 +1,113 @@
-body {
-    ;
-    // margin: 0;
-    // padding: 0;
+@import "./mixins.scss";
+@import "./colors.scss";
+@font-face {
+  font-family: montserrat-regular;
+  src: url('/./assets/fonts/Montserrat/Montserrat-Regular.ttf');
 }
 
-h1 {
-    margin: 0;
-    color: red;
-    // position: fixed;
-    // color: rgba(0, 0, 0, 0);
+body,
+html {
+  height: 100%;
+}
+
+body {
+  @include reset;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-wrapper {
+  flex: 1 0 auto;
+  // background-image: url('/src/assets/img/slide-item.jpg');
+  // background-color: black;
 }
 
 .text {
-    height: 2000px;
+  height: 2000px;
 }
 
-li {
-    display: flexbox;
-    list-style-type: none;
-    .sidebar-call-icon {
-        // background-image: url('../src/assets/img/header/call-img.svg');
-        background-color: yellow;
-        height: 30px;
-        width: 30px;
+.menu {
+  display: flex;
+
+  .side-buttons {
+    @include reset;
+    flex-direction: column;
+    height: 150px;
+    justify-content: space-between;
+    display: flex;
+    left: 85%;
+    list-style: none;
+    position: fixed;
+    top: 40%;
+
+    li {
+      background-color: #fd0;
+      align-items: center;
+      display: flex;
+      height: 30px;
+      width: 30px;
+
+      a {
+        display: flex;
+        font-family: rontserrat-regular, ;
+        font-size: 12px;
+        font-weight: 400;
+        margin: 0 auto;
+        width: 16px;
+        height: 16px;
+
+        img {
+          margin: 0 auto;
+          height: 16px;
+          width: 16px;
+        }
+      }
     }
+  }
+}
+
+.background-wraper {
+  .container {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .head-slider {
+    box-sizing: border-box;
+    .nav-block {
+      height: 130px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      a {
+        align-items: center;
+      }
+
+      ul {
+        @include reset;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        list-style-type: none;
+        width: 800px;
+
+        a {
+          text-decoration: none;
+          img {
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: blue;
+  flex-shrink: 0;
+  height: 100px;
+  width: 100%;
 }

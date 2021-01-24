@@ -69,7 +69,7 @@ module.exports = {
         ),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(
-            {filename: "styles/[name].[contenthash].css"}
+            {filename: "src/styles/[name].[contenthash].css"}
         ),
     ],
     module: {
@@ -83,7 +83,15 @@ module.exports = {
             },
             {
                 test: /\.(ico|gif|png|jpg|jpeg|svg)$/,
-                use: ['file-loader']
+                loader: 'file-loader',
+                options: {
+                    name: 'src/assets/img/[name].[ext]',
+                    publicPath: 'assets'
+                }
+            },
+            {
+                test: /\.(ttf|woff|woff2|eot)$/,
+                use: ["file-loader"],
             },
         ]
     }

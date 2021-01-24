@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-</head>
-<body>
-    <div class="main-wrapper">
-        <menu>
-            <li>
-                <div class="sidebar-call-icon"></div>
-           </li>
-            <li>
-                
-            </li>
-            <li>
-                
-           </li>
-        </menu>
-    <header>
-        <nav></nav>
-        <div class="slider">
-        </div>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= htmlWebpackPlugin.options.title %></title>
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <div class="menu">
+                <ul class="side-buttons">
+                    <li>
+                        <a href=""><img src="/src/assets/img/call-img.svg" alt="Номер телефона" title="Позвонить нам"></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="/src/assets/img/basket-img.svg" alt="" title="Корзина"></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="/src/assets/img/comparsion.svg" alt="" title="Сравнение товаров"></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Головная часть -->
+            <div class="background-wraper">
+                <header>
+                    <div class="head-slider">
+                        <div class="container">
+                            <nav class="nav-block">
+                                <a href="/" title="Evermix - строительные смеси пятого поколения">
+                                    <img src="/src/assets/img/logo.svg" alt="Evermix" class="logo" width="170px" height="32px">
+                                </a>
+                                <ul>
+                                    <li><a href="">Продукция</a></li>
+                                    <li><a href="">Решения</a></li>
+                                    <li><a href="">О бренде</a></li>
+                                    <li><a href="">Покупателям</a></li>
+                                    <li><a href="">Партнерам</a></li>
+                                    <li><a href="">Контакты</a></li>
+                                    <li><a href="">Тестовый пункт</a></li>
+                                    <li><a href=""><img src="/src/assets/img/search_icon.svg" alt=""></a></li>
+                                </ul>
+                                <!-- <div class="test">test</div> -->
+                            </nav>
+                        </div>
+                    </div>
+                </header>
+                <div class="container">data</div>
+            </div>
 
-    <h1>Hello</h1>
-    <div class="text"></div>
-</div>
-</body>
+            <!-- Контентная часть -->
+            <div class="content"></div>
+            <div class="text"></div>
+        </div>
+        <!-- Футер -->
+        <footer>
+            footer
+        </footer>
+    </body>
 </html>
