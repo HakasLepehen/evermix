@@ -85,8 +85,8 @@ module.exports = {
                 test: /\.(ico|gif|png|jpg|jpeg|svg)$/,
                 loader: 'file-loader',
                 options: {
-                    name: 'src/assets/img/[name].[ext]',
-                    publicPath: 'assets'
+                    name: '/src/assets/img/[name].[ext]',
+                    publicPath: ''
                 }
             },
             {
