@@ -118,20 +118,34 @@ body {
       }
     }
 
-    .slider-wraper, .btn-prev, .btn-next {
+    .slider-wraper {
       box-sizing: border-box;
       // background-color: red;
       height: 87vh;
       display: flex;
-      flex-direction: row;
+      // flex-direction: row;
       justify-content: space-between;
 
       .slider-container {
-        // @include container-main;
-        max-width: 100%;
-        box-sizing: border-box;
-        // margin-left: 0px;
-        display: inline-flex;
+        @include container-main;
+        // width: 70%;
+
+        .btn-prev {
+          // display: flex;
+        }
+
+        .slide-tracker {
+          // display: flex;
+          margin: 0;
+          max-width: 1000px;
+          // @include reset;
+          max-width: inherit;
+          // box-sizing: border-box;
+        }
+
+        .btn-next {
+          // display: flex;
+        }
       }
     }
   }
