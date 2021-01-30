@@ -1,5 +1,6 @@
 @import "./mixins.scss";
 @import "./colors.scss";
+
 @font-face {
   font-family: "Montserrat";
   src: url("/./assets/fonts/Montserrat/Montserrat-Regular.ttf");
@@ -17,16 +18,13 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .container {
   @include container-main;
 }
 
 .main-wrapper {
   flex: 1 0 auto;
-}
-
-.text {
-  height: 2000px;
 }
 
 .menu {
@@ -71,14 +69,15 @@ body {
 }
 
 .background-wraper {
-  background-image: url("/../src/assets/img/slide-item.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    z-index: 0;
+  background-image: url("http://evermix.etoyasno.beget.tech/wp-content/uploads/2019/02/home_header_slide_2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  z-index: 0;
+
   .head-slider {
     box-sizing: border-box;
-    
+
     // БЛОК НАВИГАЦИИ
 
     .nav-block {
@@ -88,14 +87,14 @@ body {
       align-items: center;
 
       .logo {
-        align-items: center;
+        //align-items: center;
       }
 
       ul {
         @include reset;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         list-style-type: none;
         width: 800px;
 
@@ -105,6 +104,7 @@ body {
           line-height: 1.25;
           color: #3d3d3d;
           text-decoration: none;
+
           &:hover {
             border-bottom: 4px solid $yellow;
             padding-bottom: 5px;
@@ -119,28 +119,38 @@ body {
     }
 
     .slider-wraper {
-      box-sizing: border-box;
-      // background-color: red;
       height: 87vh;
       display: flex;
-      // flex-direction: row;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: space-around;
+
+      //.btn-prev {
+      //  display: flex;
+      //  position: sticky;
+      //  margin-left: 3vw;
+      //}
+
+      .prev {
+        //background-color: rgba(255, 255, 255, .4);
+        background-color: #ffffff00;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+        background-size: cover;
+        padding: 0;
+        border: none;
+        @include size(32px, 32px);
+        :focus {
+          border: none;
+        }
+      }
+      .prev:hover {
+        cursor: pointer;
+      }
 
       .slider-container {
-        @include container-main;
-        // width: 70%;
-
-        .btn-prev {
-          // display: flex;
-        }
-
+        //@include container-main;
+        max-width: 70vw;
         .slide-tracker {
-          // display: flex;
-          margin: 0;
-          max-width: 1000px;
-          // @include reset;
-          max-width: inherit;
-          // box-sizing: border-box;
+
         }
 
         .btn-next {
@@ -150,13 +160,16 @@ body {
     }
   }
 }
+
 .data {
   background-color: $yellow;
+}
+.text {
+  height: 1000px;
 }
 
 footer {
   background-color: blue;
   flex-shrink: 0;
-  height: 100px;
-  width: 100%;
+  @include size(100px, 100%);
 }

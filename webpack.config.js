@@ -8,7 +8,6 @@ const loader = require("sass-loader");
 
 console.log(process.env.NODE_ENV);
 console.log(__dirname);
-console.log(path.join(__dirname, 'src', '/assets/img/header/call-img.svg'));
 const isDev = process.env.NODE_ENV === "development";
 const optimization = () => {
     const config = {
@@ -17,7 +16,7 @@ const optimization = () => {
         }
     };
 
-    if (! isDev) {
+    if (!isDev) {
         config.minimizer = [new OptimizeCssAssetsPlugin(), new TerserWebpackPlugin(),];
     }
 
@@ -48,14 +47,18 @@ console.log('IsDev:', isDev);
 module.exports = {
     context: path.resolve(__dirname, "src"),
     entry: path.join(__dirname, "src", "index.js"),
-    output: {
-        filename: "[name].[contenthash].js",
-        path: path.resolve(__dirname, "dist")
-    },
+    output:
+        {
+            filename: "[name].[contenthash].js",
+            path: path.resolve(__dirname, "dist")
+        },
+
     optimization: optimization(),
+
     devServer: {
         port: 4200
     },
+
     plugins: [
         new HTMLWebpackPlugin(
             {
@@ -63,7 +66,7 @@ module.exports = {
                 template: "./template.html",
                 favicon: path.resolve(__dirname, 'favicon.ico'),
                 minify: {
-                    collapseWhitespace: ! isDev
+                    collapseWhitespace: !isDev
                 }
             }
         ),
@@ -72,6 +75,7 @@ module.exports = {
             {filename: "src/styles/[name].[contenthash].css"}
         ),
     ],
+
     module: {
         rules: [
             {
@@ -85,7 +89,7 @@ module.exports = {
                 test: /\.(ico|gif|png|jpg|jpeg|svg)$/,
                 loader: 'file-loader',
                 options: {
-                    name: '/src/assets/img/[name].[ext]',
+                    name: 'src/assets/img/[name].[ext]',
                     publicPath: ''
                 }
             },

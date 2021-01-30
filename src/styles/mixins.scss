@@ -6,3 +6,8 @@
   margin: 0 auto;
   max-width: 70vw;
 }
+
+@mixin size($height, $width) {
+  height: $height;
+  width: $width;
+}
