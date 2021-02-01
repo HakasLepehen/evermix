@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "Montserrat";
-  src: url("/./assets/fonts/Montserrat/Montserrat-Regular.ttf");
+  src: url("./../assets/fonts/Montserrat/Montserrat-Regular.ttf");
 }
 
 body,
@@ -124,38 +124,29 @@ body {
       align-items: center;
       justify-content: space-around;
 
-      //.btn-prev {
-      //  display: flex;
-      //  position: sticky;
-      //  margin-left: 3vw;
-      //}
-
-      .prev {
-        //background-color: rgba(255, 255, 255, .4);
-        background-color: #ffffff00;
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
-        background-size: cover;
-        padding: 0;
-        border: none;
+      .prev, .next {
+        background-color: rgba(61, 61, 61, 0.1);
+        //opacity: 0.3;
         @include size(32px, 32px);
-        :focus {
-          border: none;
+
+        :hover {
+          cursor: pointer;
         }
       }
-      .prev:hover {
-        cursor: pointer;
+
+      .prev {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
       }
 
       .slider-container {
-        //@include container-main;
         max-width: 70vw;
+
         .slide-tracker {
-
         }
+      }
 
-        .btn-next {
-          // display: flex;
-        }
+      .next {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
       }
     }
   }
@@ -164,6 +155,7 @@ body {
 .data {
   background-color: $yellow;
 }
+
 .text {
   height: 1000px;
 }
