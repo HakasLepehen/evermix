@@ -1,0 +1,175 @@
+@import "./mixins.scss";
+@import "./colors.scss";
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/./assets/fonts/Montserrat/Montserrat-Regular.ttf");
+}
+
+body,
+html {
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+}
+
+body {
+  @include reset;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  @include container-main;
+}
+
+.main-wrapper {
+  flex: 1 0 auto;
+}
+
+.menu {
+  display: flex;
+
+  .side-buttons {
+    @include reset;
+    flex-direction: column;
+    height: 150px;
+    justify-content: space-between;
+    display: flex;
+    left: 90vw;
+    list-style: none;
+    position: fixed;
+    top: 40%;
+
+    li {
+      background-color: $yellow;
+      align-items: center;
+      display: flex;
+      height: 30px;
+      width: 30px;
+
+      a {
+        font-color: #3d3d3d;
+        display: flex;
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        margin: 0 auto;
+        width: 16px;
+        height: 16px;
+
+        img {
+          margin: 0 auto;
+          height: 16px;
+          width: 16px;
+        }
+      }
+    }
+  }
+}
+
+.background-wraper {
+  background-image: url("http://evermix.etoyasno.beget.tech/wp-content/uploads/2019/02/home_header_slide_2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  z-index: 0;
+
+  .head-slider {
+    box-sizing: border-box;
+
+    // БЛОК НАВИГАЦИИ
+
+    .nav-block {
+      height: 13vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .logo {
+        //align-items: center;
+      }
+
+      ul {
+        @include reset;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        list-style-type: none;
+        width: 800px;
+
+        a {
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 1.25;
+          color: #3d3d3d;
+          text-decoration: none;
+
+          &:hover {
+            border-bottom: 4px solid $yellow;
+            padding-bottom: 5px;
+          }
+
+          img {
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+    }
+
+    .slider-wraper {
+      height: 87vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      //.btn-prev {
+      //  display: flex;
+      //  position: sticky;
+      //  margin-left: 3vw;
+      //}
+
+      .prev {
+        //background-color: rgba(255, 255, 255, .4);
+        background-color: #ffffff00;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+        background-size: cover;
+        padding: 0;
+        border: none;
+        @include size(32px, 32px);
+        :focus {
+          border: none;
+        }
+      }
+      .prev:hover {
+        cursor: pointer;
+      }
+
+      .slider-container {
+        //@include container-main;
+        max-width: 70vw;
+        .slide-tracker {
+
+        }
+
+        .btn-next {
+          // display: flex;
+        }
+      }
+    }
+  }
+}
+
+.data {
+  background-color: $yellow;
+}
+.text {
+  height: 1000px;
+}
+
+footer {
+  background-color: blue;
+  flex-shrink: 0;
+  @include size(100px, 100%);
+}
