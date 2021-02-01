@@ -3,13 +3,16 @@
 
 @font-face {
   font-family: "Montserrat";
-  src: url("./../assets/fonts/Montserrat/Montserrat-Regular.ttf");
+  src: url("/./assets/fonts/Montserrat/Montserrat-Regular.ttf");
 }
 
 body,
 html {
   font-family: "Montserrat", sans-serif;
+  font-size: 12px;
   height: 100%;
+  line-height: 23px;
+  font-weight: 700;
 }
 
 body {
@@ -83,8 +86,9 @@ body {
     .nav-block {
       height: 13vh;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
+      padding: 0 40px 0 40px;
 
       .logo {
         //align-items: center;
@@ -94,14 +98,13 @@ body {
         @include reset;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         list-style-type: none;
         width: 800px;
 
         a {
-          font-size: 12px;
-          font-weight: 700;
-          line-height: 1.25;
+          //font-size: 12px;
+          //font-weight: 700;
           color: #3d3d3d;
           text-decoration: none;
 
@@ -118,35 +121,91 @@ body {
       }
     }
 
+    // CЛАЙДЕР
+
     .slider-wraper {
       height: 87vh;
       display: flex;
       align-items: center;
       justify-content: space-around;
 
-      .prev, .next {
-        background-color: rgba(61, 61, 61, 0.1);
-        //opacity: 0.3;
+      .prev {
+        //background-color: rgba(255, 255, 255, .4);
+        background-color: #ffffff00;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+        background-size: cover;
+        padding: 0;
+        border: none;
         @include size(32px, 32px);
 
-        :hover {
-          cursor: pointer;
+        :focus {
+          border: none;
         }
       }
 
-      .prev {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+      .prev:hover {
+        cursor: pointer;
       }
 
       .slider-container {
-        max-width: 70vw;
+        @include container-main;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
 
         .slide-tracker {
+          align-items: center;
+          display: flex;
+          flex-direction: row;
+          height: 100vh;
+          justify-content: center;
+          width: (70vw * 4);
+
+          .slider-item {
+            width: 70vw;
+            height: 200px;
+
+
+            .slider-label {
+              text-align: center;
+              margin-bottom: 30px;
+              flex-wrap: wrap;
+
+              h1 {
+                max-width: 30vw;
+                margin: 0 auto;
+                font-size: 36px;
+                font-weight: 700;
+                line-height: 55px;
+                color: $dark-color;
+              }
+            }
+
+            .slider-btn {
+              display: flex;
+              justify-content: center;
+              @include size(60px, 220px);
+              background-color: $yellow;
+              color: $dark-color;
+              text-decoration: none;
+              align-items: center;
+              margin: 0 auto;
+              box-shadow: 0 3px 16px $yellow;
+            }
+          }
         }
       }
-
       .next {
+        background-color: #ffffff00;
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+        background-size: cover;
+        padding: 0;
+        border: none;
+        @include size(32px, 32px);
+
+        :focus {
+          border: none;
+        }
       }
     }
   }
