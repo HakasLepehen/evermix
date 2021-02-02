@@ -5,7 +5,8 @@ import './assets/img/comparsion.svg';
 import './assets/img/logo.svg';
 import './assets/img/slide-item.jpg';
 import './assets/img/search_icon.svg';
-import './assets/img/slide-back-arrow.png';
+import './assets/img/slide-left-arrow.svg';
+import './assets/img/slide-right-arrow.svg';
 import './assets/fonts/Montserrat/Montserrat-Regular.ttf';
 
 
