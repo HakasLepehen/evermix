@@ -45,11 +45,16 @@ body {
     top: 40%;
 
     li {
-      background-color: $yellow;
       align-items: center;
       display: flex;
       height: 30px;
       width: 30px;
+
+      :hover {
+        background-color: $yellow;
+        height: 30px;
+        width: 30px;
+      }
 
       a {
         font-color: #3d3d3d;
@@ -63,8 +68,7 @@ body {
 
         img {
           margin: 0 auto;
-          height: 16px;
-          width: 16px;
+          @include size(16px, 16px);
         }
       }
     }
@@ -76,46 +80,43 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  //width: 100vw;
   z-index: 0;
 
   .head-slider {
     box-sizing: border-box;
 
-    // БЛОК НАВИГАЦИИ
+    .container {
+      @include container-main;
 
-    .nav-block {
-      height: 13vh;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 0 40px 0 40px;
+      // БЛОК НАВИГАЦИИ
 
-      .logo {
-        //align-items: center;
-      }
-
-      ul {
-        @include reset;
+      .nav-block {
+        align-items: center;
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        list-style-type: none;
-        width: 800px;
+        height: 13vh;
+        justify-content: space-between;
 
-        a {
-          //font-size: 12px;
-          //font-weight: 700;
-          color: #3d3d3d;
-          text-decoration: none;
+        ul {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          list-style-type: none;
+          width: 800px;
 
-          &:hover {
-            border-bottom: 4px solid $yellow;
-            padding-bottom: 5px;
-          }
+          a {
+            color: #3d3d3d;
+            text-decoration: none;
 
-          img {
-            height: 20px;
-            width: 20px;
+            &:hover {
+              border-bottom: 4px solid $yellow;
+              padding-bottom: 5px;
+            }
+
+            img {
+              height: 20px;
+              width: 20px;
+            }
           }
         }
       }
@@ -124,22 +125,15 @@ body {
     // CЛАЙДЕР
 
     .slider-wraper {
-      height: 87vh;
-      display: flex;
       align-items: center;
-      justify-content: space-around;
+      display: flex;
+      height: 87vh;
 
       .prev {
-        //background-color: rgba(255, 255, 255, .4);
-        background-color: #ffffff00;
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
-        background-size: cover;
-        padding: 0;
-        border: none;
-        @include size(32px, 32px);
+        margin: 0 0 160px 40px;
 
-        :focus {
-          border: none;
+        img {
+          @include size(32px, 32px);
         }
       }
 
@@ -149,70 +143,102 @@ body {
 
       .slider-container {
         @include container-main;
-        display: flex;
-        flex-direction: row;
         overflow: hidden;
+        margin-bottom: 180px;
 
         .slide-tracker {
-          align-items: center;
           display: flex;
-          flex-direction: row;
-          height: 100vh;
-          justify-content: center;
-          width: (70vw * 4);
+          width: 400vw;
+
 
           .slider-item {
-            width: 70vw;
-            height: 200px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+            justify-content: center;
+            width: 58vw;
 
-
-            .slider-label {
+            h1 {
+              color: $dark-color;
+              font-size: 36px;
+              font-weight: 700;
+              line-height: 55px;
+              width: 40vw;
               text-align: center;
-              margin-bottom: 30px;
-              flex-wrap: wrap;
-
-              h1 {
-                max-width: 30vw;
-                margin: 0 auto;
-                font-size: 36px;
-                font-weight: 700;
-                line-height: 55px;
-                color: $dark-color;
-              }
             }
 
             .slider-btn {
+              @include size(60px, 220px);
+              align-items: center;
+              background-color: $yellow;
+              box-shadow: 0 3px 16px $yellow;
+              color: $dark-color;
               display: flex;
               justify-content: center;
-              @include size(60px, 220px);
-              background-color: $yellow;
-              color: $dark-color;
+              //margin: 20px 0 0 0;
+              text-align: center;
               text-decoration: none;
-              align-items: center;
-              margin: 0 auto;
-              box-shadow: 0 3px 16px $yellow;
             }
           }
         }
       }
-      .next {
-        background-color: #ffffff00;
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
-        background-size: cover;
-        padding: 0;
-        border: none;
-        @include size(32px, 32px);
 
-        :focus {
-          border: none;
+      .next {
+        @include size(32px, 32px);
+        margin: 0 40px 160px 0;
+
+        img {
+          @include size(32px, 32px);
         }
       }
     }
   }
 }
 
-.data {
-  background-color: $yellow;
+.promo {
+  position: relative;
+  top: -19vh;
+
+  .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .work {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: (58vw / 3);
+      height: 19vh;
+      background-color: white;
+      @for $i from 1 through 6 {
+        @if ($i == 4) {
+          &:nth-of-type(#{$i}) {
+            border-bottom: $border-gray;
+            border-right: $border-gray;
+            border-left: $border-gray;
+
+            .color-square {
+              @include size(10px, 10px);
+              background-color: nth((#00469b, #de0124, #009736, #81d1f6, #ed613d, #005179), $i);
+            }
+          }
+        } @else {
+          &:nth-of-type(#{$i}) {
+            border-bottom: $border-gray;
+            border-right: $border-gray;
+
+            .color-square {
+              @include size(10px, 10px);
+              background-color: nth((#00469b, #de0124, #009736, #81d1f6, #ed613d, #005179), $i);
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .text {
