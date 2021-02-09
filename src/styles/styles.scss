@@ -169,16 +169,7 @@ body {
             }
 
             .slider-btn {
-              @include size(60px, 220px);
-              align-items: center;
-              background-color: $yellow;
-              box-shadow: 0 3px 16px $yellow;
-              color: $dark-color;
-              display: flex;
-              justify-content: center;
-              //margin: 20px 0 0 0;
-              text-align: center;
-              text-decoration: none;
+              @include colored-btn($yellow, $dark-color, 60px, 220px)
             }
           }
         }
@@ -204,24 +195,32 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    box-shadow: 0px 2px 30px #bdbdbd61;
+    -webkit-box-shadow: 10px 10px 29px -4px #bdbdbd61;
+    -moz-box-shadow: 10px 10px 29px -4px #bdbdbd61;
 
     .work {
-      box-sizing: border-box;
-      display: flex;
       align-items: center;
+      background-color: white;
+      box-sizing: border-box;
+
+      display: flex;
+      flex-direction: column;
+      height: 19vh;
       justify-content: center;
       width: (58vw / 3);
-      height: 19vh;
-      background-color: white;
       @for $i from 1 through 6 {
         @if ($i == 4) {
-          &:nth-of-type(#{$i}) {
+          &:nth-of-type(4) {
             border-bottom: $border-gray;
             border-right: $border-gray;
             border-left: $border-gray;
 
             .color-square {
               @include size(10px, 10px);
+              position: relative;
+              top: 30px;
+              left: 120px;
               background-color: nth((#00469b, #de0124, #009736, #81d1f6, #ed613d, #005179), $i);
             }
           }
@@ -232,6 +231,9 @@ body {
 
             .color-square {
               @include size(10px, 10px);
+              position: relative;
+              top: 30px;
+              left: 120px;
               background-color: nth((#00469b, #de0124, #009736, #81d1f6, #ed613d, #005179), $i);
             }
           }
