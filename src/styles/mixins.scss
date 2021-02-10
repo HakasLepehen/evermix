@@ -27,3 +27,7 @@
   text-align: center;
   text-decoration: none;
 }
+
+@function math-sub ($val1, $val2) {
+  @return $val1 - $val2;
+}

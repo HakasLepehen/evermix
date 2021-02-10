@@ -3,7 +3,11 @@
 
 @font-face {
   font-family: "Montserrat";
-  src: url("/./assets/fonts/Montserrat/Montserrat-Regular.ttf");
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body,
@@ -17,9 +21,9 @@ html {
 
 body {
   @include reset;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .container {
@@ -80,16 +84,13 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  //width: 100vw;
+  width: 100vw;
   z-index: 0;
 
   .head-slider {
-    box-sizing: border-box;
-
+    // БЛОК НАВИГАЦИИ
     .container {
       @include container-main;
-
-      // БЛОК НАВИГАЦИИ
 
       .nav-block {
         align-items: center;
@@ -105,7 +106,7 @@ body {
           width: 800px;
 
           a {
-            color: #3d3d3d;
+            color: $blur-gray;
             text-decoration: none;
 
             &:hover {
@@ -187,9 +188,14 @@ body {
   }
 }
 
+section {
+
+  padding: 4vh 0 4vh 0;
+}
+
 .promo {
-  position: relative;
-  top: -19vh;
+  //position: relative;
+  margin-top: math-sub(-19vh, 4vh);
 
   .services {
     display: flex;
@@ -202,13 +208,20 @@ body {
     .work {
       align-items: center;
       background-color: white;
-      box-sizing: border-box;
 
       display: flex;
       flex-direction: column;
       height: 19vh;
       justify-content: center;
       width: (58vw / 3);
+
+      span {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 25px;
+        color: $blur-gray;
+      }
+
       @for $i from 1 through 6 {
         @if ($i == 4) {
           &:nth-of-type(4) {
@@ -229,6 +242,7 @@ body {
             border-bottom: $border-gray;
             border-right: $border-gray;
 
+
             .color-square {
               @include size(10px, 10px);
               position: relative;
@@ -240,6 +254,53 @@ body {
         }
       }
     }
+  }
+}
+
+.brand-promo {
+  padding-top: 75px;
+
+  .about {
+    position: relative;
+    @include size(40vh, 58vw);
+
+    img {
+      @include size(40vh, 100%);
+    }
+
+    .brand-banner-wrapper {
+      @include size(50%, 58%);
+      display: inline;
+      left: 10%;
+      position: absolute;
+      top: 4%;
+
+      h2 {
+        color: white;
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 50px;
+        margin-bottom: 10px;
+        outline: none;
+      }
+
+      .brand-banner-label {
+        color: white;
+        font-size: 14px;
+        margin-bottom: 35px;
+        outline: none;
+      }
+
+      .brand-label-btn {
+        @include colored-btn($yellow, $dark-color, 60px, 220px);
+
+
+      }
+    }
+  }
+
+  .data {
+
   }
 }
 
