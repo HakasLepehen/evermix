@@ -96,7 +96,7 @@ module.exports = {
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
                 use: ["file-loader"],
-                options: {publicPath: 'assets/fonts/'}
+                // options: {publicPath: 'assets/fonts/'}
             },
         ]
     }
