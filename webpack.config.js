@@ -72,7 +72,7 @@ module.exports = {
         ),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(
-            {filename: "src/styles/[name].[contenthash].css"}
+            {filename: "[name].[contenthash].css"}
         ),
     ],
 
@@ -95,8 +95,15 @@ module.exports = {
             },
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
-                use: ["file-loader"],
-                // options: {publicPath: 'assets/fonts/'}
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'src/assets/fonts/'
+                        }
+                    }
+                ],
             },
         ]
     }
