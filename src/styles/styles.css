@@ -331,7 +331,6 @@ section {
   justify-content: space-between;
 }
 .brand-promo .about .brand-block .brand-text {
-  background-color: lightpink;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -339,6 +338,15 @@ section {
   height: 460px;
   width: 720px;
   padding: 60px 130px 60px 120px;
+}
+.brand-promo .about .brand-block .brand-text .brand-title {
+  font-size: 24px;
+  margin: 0 0 30px;
+}
+.brand-promo .about .brand-block .brand-text .brand-promo_text {
+  font-weight: 400;
+  line-height: 25px;
+  margin: 0 0 40px;
 }
 .brand-promo .about .brand-block .brand-text .brand-promo-btn {
   height: 60px;
@@ -358,11 +366,29 @@ section {
 .brand-promo .about .brand-block .brand-logo {
   justify-content: flex-end;
   background-color: #81d1f6;
-  height: 550px;
+  height: 505px;
   width: 340px;
   margin-left: 40px;
   margin-top: -90px;
 }
+.brand-promo .about .brand-block .brand-logo .polintel-logo {
+  box-sizing: border-box;
+  background-color: #fd0;
+  height: 340px;
+  width: 340 px;
+}
+.brand-promo .about .brand-block .brand-logo .polintel-label-wraper {
+  height: 165px;
+  width: 340px;
+  background-color: #3d3d3d;
+}
+.brand-promo .about .brand-block .brand-logo .polintel-label-wraper .polintel-label-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  padding: 45px;
+}
+
 .text {
   height: 1000px;
 }

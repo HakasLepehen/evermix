@@ -293,7 +293,6 @@ section {
       justify-content: space-between;
 
       .brand-text {
-        background-color: lightpink;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
@@ -301,9 +300,14 @@ section {
         @include size(460px, 720px);
         padding: 60px 130px 60px 120px;
         .brand-title {
-
+          font-size: 24px;
+          margin: 0 0 30px;
         }
-        .brand-promo_text {}
+        .brand-promo_text {
+          font-weight: 400;
+          line-height: 25px;
+          margin: 0 0 40px;
+        }
         .brand-promo-btn {
           @include colored-btn($dark-color, white, 60px, 220px);
         }
@@ -311,13 +315,24 @@ section {
       .brand-logo {
         justify-content: flex-end;
         background-color: #81d1f6;
-        @include size(550px, 340px);
+        @include size(505px, 340px);
         margin-left: 40px;
         margin-top: -90px;
 
-        .polintel-logo {}
+        .polintel-logo {
+          box-sizing: border-box;
+          background-color: $yellow;
+          @include size(340px, 340 px);
+        }
         .polintel-label-wraper {
-          .polintel-label-text {}
+          @include size(165px, 340px);
+          background-color: $dark-color;
+          .polintel-label-text {
+            font-size: 16px;
+            font-weight: 500;
+            color: white;
+            padding: 45px;
+          }
         }
       }
     }
