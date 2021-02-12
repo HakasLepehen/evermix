@@ -2,6 +2,10 @@
   font-family: "Montserrat";
   src: url("../assets/fonts/Montserrat-Regular.ttf");
 }
+* {
+  box-sizing: border-box;
+}
+
 body,
 html {
   font-family: "Montserrat", sans-serif;
@@ -283,6 +287,7 @@ section {
   position: relative;
   height: 40vh;
   width: 58vw;
+  z-index: 0;
 }
 .brand-promo .about img {
   height: 40vh;
@@ -325,12 +330,12 @@ section {
   text-align: center;
   text-decoration: none;
 }
-.brand-promo .about .brand-block {
+.brand-promo .brand-block {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.brand-promo .about .brand-block .brand-text {
+.brand-promo .brand-block .brand-text {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -339,16 +344,16 @@ section {
   width: 720px;
   padding: 60px 130px 60px 120px;
 }
-.brand-promo .about .brand-block .brand-text .brand-title {
+.brand-promo .brand-block .brand-text .brand-title {
   font-size: 24px;
   margin: 0 0 30px;
 }
-.brand-promo .about .brand-block .brand-text .brand-promo_text {
+.brand-promo .brand-block .brand-text .brand-promo_text {
   font-weight: 400;
   line-height: 25px;
   margin: 0 0 40px;
 }
-.brand-promo .about .brand-block .brand-text .brand-promo-btn {
+.brand-promo .brand-block .brand-text .brand-promo-btn {
   height: 60px;
   width: 220px;
   align-items: center;
@@ -363,30 +368,94 @@ section {
   text-align: center;
   text-decoration: none;
 }
-.brand-promo .about .brand-block .brand-logo {
+.brand-promo .brand-block .brand-logo {
   justify-content: flex-end;
   background-color: #81d1f6;
   height: 505px;
   width: 340px;
   margin-left: 40px;
   margin-top: -90px;
+  z-index: 1;
 }
-.brand-promo .about .brand-block .brand-logo .polintel-logo {
+.brand-promo .brand-block .brand-logo .polintel-logo {
   box-sizing: border-box;
   background-color: #fd0;
   height: 340px;
-  width: 340 px;
+  width: 340px;
 }
-.brand-promo .about .brand-block .brand-logo .polintel-label-wraper {
+.brand-promo .brand-block .brand-logo .polintel-label-wraper {
   height: 165px;
   width: 340px;
   background-color: #3d3d3d;
 }
-.brand-promo .about .brand-block .brand-logo .polintel-label-wraper .polintel-label-text {
+.brand-promo .brand-block .brand-logo .polintel-label-wraper .polintel-label-text {
   font-size: 16px;
   font-weight: 500;
   color: white;
   padding: 45px;
+}
+
+.products-section {
+  height: 560px;
+  width: 100%;
+}
+.products-section .products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.products-section .products .container {
+  background-color: lightgrey;
+}
+.products-section .products .container .products-title {
+  align-self: center;
+  display: flex;
+  font-size: 18px;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 35px;
+  margin-bottom: 35px;
+}
+.products-section .products .products-slider-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  background-color: bisque;
+  height: 450px;
+  width: 62vw;
+  overflow: hidden;
+}
+.products-section .products .products-slider-wrapper .products-slider-ctrl-prev {
+  background-color: cyan;
+  height: 30px;
+  width: 30px;
+}
+.products-section .products .products-slider-wrapper .container {
+  overflow: hidden;
+}
+.products-section .products .products-slider-wrapper .container .products-slide-tracker {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: space-between;
+  height: 450px;
+  width: 1484.787px;
+  background-color: yellowgreen;
+}
+.products-section .products .products-slider-wrapper .container .products-slide-tracker .product-card {
+  display: flex;
+  overflow: hidden;
+  padding: 40px 40px 20px 40px;
+  border: 1px solid black;
+  height: 450px;
+  width: 340px;
+  background-color: #eeeeee;
+  margin: 0 20px;
+}
+.products-section .products .products-slider-wrapper .products-slider-ctrl-next {
+  height: 30px;
+  width: 30px;
+  background-color: cyan;
 }
 
 .text {
