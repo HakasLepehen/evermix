@@ -15,7 +15,7 @@ html {
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   height: 100%;
-  color: $blur-gray;
+  color: $dark-color;
   line-height: 23px;
   font-weight: 700;
 }
@@ -353,7 +353,6 @@ section {
 
 .products-section {
   @include size(560px, 100%);
-  //background-color: lightgrey;
 
 
   .products {
@@ -362,7 +361,6 @@ section {
     align-items: center;
 
     .container {
-      background-color: lightgrey;
 
       .products-title {
         align-self: center;
@@ -376,21 +374,20 @@ section {
     }
 
     .products-slider-wrapper {
+      @include size(450px, 62vw);
       align-items: center;
       display: flex;
       flex-direction: row;
-      background-color: bisque;
-      @include size(450px, 62vw);
       overflow: hidden;
       //padding: 0 40px;
 
       .products-slider-ctrl-prev {
-        background-color: cyan;
         @include size(30px, 30px);
       }
 
       .container {
         overflow: hidden;
+
         .products-slide-tracker {
           display: flex;
           flex-direction: row;
@@ -398,23 +395,82 @@ section {
           justify-content: space-between;
           @include size(450px, 1484.787px);
 
-          background-color: yellowgreen;
-
           .product-card {
+            @include size(450px, 340px);
+            border: 1px solid #eee;
             display: flex;
+            flex-direction: column;
+            margin: 0 20px;
             overflow: hidden;
             padding: 40px 40px 20px 40px;
-            border: 1px solid black;
-            @include size(450px, 340px);
-            background-color: #eeeeee;
-            margin: 0 20px;
+
+            .lazy {
+              @include size(270px, 198px);
+              display: flex;
+              margin: 0 auto;
+            }
+
+            .product-title {
+
+              &-name {
+                line-height: 23px;
+              }
+
+              .product-title-mark {
+                color: black;
+                display: block;
+                font-size: 14px;
+                font-weight: 900;
+                margin-top: 5px;
+              }
+            }
           }
         }
       }
 
       .products-slider-ctrl-next {
         @include size(30px, 30px);
-        background-color: cyan;
+      }
+    }
+  }
+}
+
+.solutions {
+  .container {
+    background-color: pink;
+    height: 100%;
+    .row {
+      display: flex;
+      justify-content: space-between;
+      background-color: pink;
+      flex-wrap: wrap;
+      margin: 20px 0;
+      &:last-child {
+        .sols-card {
+          @include size(340px, 100%);
+          background-color: red;
+          margin: 0;
+        }
+      }
+      .sols-card {
+        @include size(450px, 357px);
+        background-color: aquamarine;
+
+        h2 {
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 35px;
+          margin-bottom: 30px;
+        }
+
+        p {
+          //display: block;
+          color: black;
+        }
+        .sols-btn {
+          @include colored-btn($yellow, black, 60px, 220px);
+          position: relative;
+        }
       }
     }
   }
