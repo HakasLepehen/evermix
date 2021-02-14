@@ -393,13 +393,14 @@ section {
         width: 30px; }
 
 .solutions .container {
-  background-color: pink;
+  margin: 0 auto;
+  width: 58vw;
   height: 100%; }
   .solutions .container .row {
     display: flex;
-    justify-content: space-between;
-    background-color: pink;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin: 20px 0; }
     .solutions .container .row:last-child .sols-card {
       height: 340px;
@@ -409,15 +410,19 @@ section {
     .solutions .container .row .sols-card {
       height: 450px;
       width: 357px;
-      background-color: aquamarine; }
-      .solutions .container .row .sols-card h2 {
+      background-color: aquamarine;
+      display: flex;
+      flex-direction: column; }
+      .solutions .container .row .sols-card .sols-card-title h2 {
         font-size: 24px;
         font-weight: 500;
-        line-height: 35px;
-        margin-bottom: 30px; }
-      .solutions .container .row .sols-card p {
+        line-height: 29px; }
+      .solutions .container .row .sols-card .sols-card-text p {
+        display: block;
         color: black; }
-      .solutions .container .row .sols-card .sols-btn {
+        .solutions .container .row .sols-card .sols-card-text p :nth-of-type(2) {
+          flex-grow: 1; }
+      .solutions .container .row .sols-card .sols-card-btn .sols-btn {
         height: 60px;
         width: 220px;
         align-items: center;
@@ -430,8 +435,7 @@ section {
         justify-content: center;
         margin: 20px 0 0 0;
         text-align: center;
-        text-decoration: none;
-        position: relative; }
+        text-decoration: none; }
 
 .text {
   height: 1000px; }
