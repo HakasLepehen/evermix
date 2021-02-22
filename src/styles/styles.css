@@ -2,7 +2,8 @@
   font-family: "Montserrat";
   src: url("../assets/fonts/Montserrat-Regular.ttf"); }
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  text-decoration: none; }
 
 body,
 html {
@@ -401,28 +402,29 @@ section {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 20px 0; }
+    margin: 20px 0;
+    padding: 20px 0; }
     .solutions .container .row:last-child .sols-card {
       height: 340px;
       width: 100%;
-      background-color: red;
       margin: 0; }
-    .solutions .container .row .sols-card {
+    .solutions .container .row .sols-card-item, .solutions .container .row .sols-card {
       height: 450px;
       width: 357px;
-      background-color: aquamarine;
       display: flex;
-      flex-direction: column; }
-      .solutions .container .row .sols-card .sols-card-title h2 {
+      flex-direction: column;
+      justify-content: space-between; }
+      .solutions .container .row .sols-card-item .sols-card-title h2, .solutions .container .row .sols-card .sols-card-title h2 {
+        margin: 0;
         font-size: 24px;
-        font-weight: 500;
+        font-weight: 1000;
         line-height: 29px; }
-      .solutions .container .row .sols-card .sols-card-text p {
+      .solutions .container .row .sols-card-item .sols-card-text p, .solutions .container .row .sols-card .sols-card-text p {
         display: block;
         color: black; }
-        .solutions .container .row .sols-card .sols-card-text p :nth-of-type(2) {
+        .solutions .container .row .sols-card-item .sols-card-text p :nth-of-type(2), .solutions .container .row .sols-card .sols-card-text p :nth-of-type(2) {
           flex-grow: 1; }
-      .solutions .container .row .sols-card .sols-card-btn .sols-btn {
+      .solutions .container .row .sols-card-item .sols-card-btn .sols-btn, .solutions .container .row .sols-card .sols-card-btn .sols-btn {
         height: 60px;
         width: 220px;
         align-items: center;
@@ -436,6 +438,28 @@ section {
         margin: 20px 0 0 0;
         text-align: center;
         text-decoration: none; }
+    .solutions .container .row .sols-card {
+      background-color: #f0f0f0;
+      color: #3d3d3d;
+      position: relative;
+      transition: 0.5s; }
+      .solutions .container .row .sols-card-img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 0; }
+        .solutions .container .row .sols-card-img:hover {
+          cursor: pointer;
+          filter: blur(15px);
+          opacity: 0.5; }
+          .solutions .container .row .sols-card-img:hover .sols-card-description {
+            color: white; }
+      .solutions .container .row .sols-card-description {
+        margin: 20px;
+        padding: 40px;
+        z-index: 1; }
+        .solutions .container .row .sols-card-description:hover .solution-title {
+          color: white; }
 
 .text {
   height: 1000px; }

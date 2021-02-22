@@ -8,6 +8,7 @@
 
 * {
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 body,
@@ -446,27 +447,29 @@ section {
       flex-wrap: wrap;
       justify-content: space-between;
       margin: 20px 0;
+      padding: 20px 0;
 
       &:last-child {
 
         .sols-card {
+
           @include size(340px, 100%);
-          background-color: red;
           margin: 0;
         }
       }
 
-      .sols-card {
+      .sols-card-item, .sols-card {
         @include size(450px, 357px);
-        background-color: aquamarine;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
 
         .sols-card-title {
 
           h2 {
+            margin: 0;
             font-size: 24px;
-            font-weight: 500;
+            font-weight: 1000;
             line-height: 29px;
           }
         }
@@ -487,6 +490,42 @@ section {
           .sols-btn {
             @include colored-btn($yellow, black, 60px, 220px);
           }
+        }
+      }
+
+      .sols-card {
+        background-color: rgba(240, 240, 240, 1);
+        color: $dark-color;
+        position: relative;
+        transition: 0.5s;
+
+        &-img {
+          position: absolute;
+          @include size(100%, 100%);
+          z-index: 0;
+
+          &:hover {
+            cursor: pointer;
+            filter: blur(15px);
+            opacity: 0.5;
+
+            .sols-card-description {
+              color: white;
+            }
+          }
+        }
+
+        &-description {
+          margin: 20px;
+          padding: 40px;
+          z-index: 1;
+
+          &:hover {
+            .solution-title {
+              color: white;
+            }
+          }
+
         }
       }
     }

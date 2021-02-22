@@ -9,6 +9,7 @@ import './assets/img/slide-left-arrow.svg';
 import './assets/img/slide-right-arrow.svg';
 import './assets/fonts/Montserrat-Regular.ttf';
 import './assets/img/diCaprio.gif';
+import './assets/img/home_special_solutions.png';
 
 
 console.log('Index.js was loaded');
