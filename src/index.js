@@ -10,6 +10,10 @@ import './assets/img/slide-right-arrow.svg';
 import './assets/fonts/Montserrat-Regular.ttf';
 import './assets/img/diCaprio.gif';
 import './assets/img/home_special_solutions.png';
+import './assets/img/black_right_arrow.svg';
+import './assets/img/calculation.svg';
+import './assets/img/question.svg';
+
 
 
 console.log('Index.js was loaded');
