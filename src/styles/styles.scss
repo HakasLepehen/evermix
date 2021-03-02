@@ -585,24 +585,21 @@ section {
         text-align: center;
 
         &:before {
+          @include size(15px, 20px);
           background: center / contain no-repeat url("./../assets/img/question.svg");
           box-sizing: border-box;
           content: "";
           display: block;
-          height: 15px;
           margin-left: auto;
-          width: 20px;
         }
 
         &:after {
+          @include size(12px, 12px);
           content: "";
           display: block;
-          //background-image: url("");
           background: center / contain no-repeat url("./../assets/img/black_right_arrow.svg");
           margin: auto;
           padding-top: 20px;
-          width: 12px;
-          height: 12px;
         }
       }
     }
@@ -649,14 +646,13 @@ section {
         font-weight: 800;
 
         &:after {
+          @include size(12px, 12px);
           background: center / contain no-repeat url("./../assets/img/black_right_arrow.svg");
           content: "";
           display: inline-block;
-          height: 12px;
           margin-bottom: 0;
           margin-left: 20px;
           margin-top: 0;
-          width: 12px;
         }
       }
     }
@@ -671,13 +667,12 @@ section {
       padding: 30px 50px;
 
       &:after {
+        @include size(12px, 12px);
         background: center / contain no-repeat url("./../assets/img/black_right_arrow.svg");
         content: "";
         display: block;
-        height: 12px;
         margin-bottom: 0;
         margin-left: 0;
-        width: 12px;
       }
 
       .news-item-date-wrapper {
@@ -704,29 +699,23 @@ section {
   .container {
 
     .objects-title {
-      text-align: center;
       margin: 0 0 35px;
+      text-align: center;
     }
 
     .object-wrapper {
-    //  display: flex;
-    //  flex-direction: row;
-    //  flex-wrap: wrap;
-    //  justify-content: space-between;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    //margin: 20px 0;
-    //padding: 20px 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
 
       .object-item {
         @include size(360px, 530px);
         background-color: rgba(240, 240, 240, 1);
         color: $dark-color;
+        margin: 20px 0;
         position: relative;
         transition: 0.5s;
-        margin: 20px 0;
 
         &-img {
           @include size(100%, 100%);
@@ -746,43 +735,52 @@ section {
           z-index: 1;
 
           .title {
+            color: white;
             font-size: 18px;
             font-weight: 500;
-            color: black;
             line-height: 25px;
+            position: relative;
             z-index: 11;
           }
         }
       }
-    //
-    //  .object-item {
-    //    @include size(360px, 530px);
-    //    display: flex;
-    //    flex-direction: column;
-    //    margin: 20px 0;
-    //    //padding: 30px 50px;
-    //    //z-index: 1;
-    //
-    //    &-img {
-    //      @include size(100%, 100%);
-    //      z-index: 0;
-    //    }
-    //
-    //    .object-item-title {
-    //      @include size(100%, 100%);
-    //      background-color: red;
-    //      z-index: 10;
-    //    }
-    //  }
     }
 
     .objects-all {
+      color: black;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      font-weight: 600;
 
       & {
         margin: 35px 0 0 0;
         text-align: center;
+
+        &:after {
+          background: center / contain no-repeat url("./../assets/img/black_right_arrow.svg");
+          content: "";
+          display: block;
+          height: 12px;
+          margin-top: 6px;
+          //margin-bottom: 0;
+          margin-left: 12px;
+          width: 12px;
+        }
       }
     }
+  }
+}
+
+.map {
+@include size(800px, 100%);
+
+  .map-wrapper {
+    @include size(100%, 100%);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 0;
   }
 }
 
@@ -791,7 +789,7 @@ section {
 }
 
 footer {
+  @include size(100px, 100%);
   background-color: blue;
   flex-shrink: 0;
-  @include size(100px, 100%);
 }
